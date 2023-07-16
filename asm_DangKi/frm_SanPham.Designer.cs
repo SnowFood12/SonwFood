@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.lbl_tinhTrang = new System.Windows.Forms.Label();
             this.cbo_tinhTrang = new System.Windows.Forms.ComboBox();
             this.btn_tim = new System.Windows.Forms.Button();
@@ -47,7 +48,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btn_reset = new System.Windows.Forms.Button();
+            this.cbo_giaMin = new System.Windows.Forms.ComboBox();
+            this.cbo_giaMax = new System.Windows.Forms.ComboBox();
+            this.lbl_giaMax = new System.Windows.Forms.Label();
+            this.lbl_giaMin = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -68,8 +72,12 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.lbl_giaMin);
+            this.tabPage1.Controls.Add(this.lbl_giaMax);
             this.tabPage1.Controls.Add(this.btn_reset);
             this.tabPage1.Controls.Add(this.lbl_tinhTrang);
+            this.tabPage1.Controls.Add(this.cbo_giaMax);
+            this.tabPage1.Controls.Add(this.cbo_giaMin);
             this.tabPage1.Controls.Add(this.cbo_tinhTrang);
             this.tabPage1.Controls.Add(this.btn_tim);
             this.tabPage1.Controls.Add(this.lbl_dsSanPham);
@@ -82,6 +90,16 @@
             this.tabPage1.Text = "Danh sách sản phẩm";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btn_reset
+            // 
+            this.btn_reset.Location = new System.Drawing.Point(1012, 124);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(83, 33);
+            this.btn_reset.TabIndex = 5;
+            this.btn_reset.Text = "Reset";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // lbl_tinhTrang
             // 
@@ -189,41 +207,65 @@
             // tabPage2
             // 
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1114, 584);
+            this.tabPage2.Size = new System.Drawing.Size(1114, 578);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thêm sản phẩm";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 35);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1114, 584);
+            this.tabPage3.Size = new System.Drawing.Size(1114, 578);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Sửa sản phẩm";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(4, 35);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1114, 584);
+            this.tabPage4.Size = new System.Drawing.Size(1114, 578);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Xoá sản phẩm";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btn_reset
+            // cbo_giaMin
             // 
-            this.btn_reset.Location = new System.Drawing.Point(1012, 124);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(83, 33);
-            this.btn_reset.TabIndex = 5;
-            this.btn_reset.Text = "Reset";
-            this.btn_reset.UseVisualStyleBackColor = true;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            this.cbo_giaMin.FormattingEnabled = true;
+            this.cbo_giaMin.Location = new System.Drawing.Point(129, 124);
+            this.cbo_giaMin.Name = "cbo_giaMin";
+            this.cbo_giaMin.Size = new System.Drawing.Size(122, 34);
+            this.cbo_giaMin.TabIndex = 3;
+            // 
+            // cbo_giaMax
+            // 
+            this.cbo_giaMax.FormattingEnabled = true;
+            this.cbo_giaMax.Location = new System.Drawing.Point(382, 124);
+            this.cbo_giaMax.Name = "cbo_giaMax";
+            this.cbo_giaMax.Size = new System.Drawing.Size(121, 34);
+            this.cbo_giaMax.TabIndex = 3;
+            // 
+            // lbl_giaMax
+            // 
+            this.lbl_giaMax.AutoSize = true;
+            this.lbl_giaMax.Location = new System.Drawing.Point(277, 127);
+            this.lbl_giaMax.Name = "lbl_giaMax";
+            this.lbl_giaMax.Size = new System.Drawing.Size(99, 26);
+            this.lbl_giaMax.TabIndex = 6;
+            this.lbl_giaMax.Text = "Giá Max:";
+            // 
+            // lbl_giaMin
+            // 
+            this.lbl_giaMin.AutoSize = true;
+            this.lbl_giaMin.Location = new System.Drawing.Point(20, 127);
+            this.lbl_giaMin.Name = "lbl_giaMin";
+            this.lbl_giaMin.Size = new System.Drawing.Size(93, 26);
+            this.lbl_giaMin.TabIndex = 6;
+            this.lbl_giaMin.Text = "Giá Min:";
             // 
             // frm_SanPham
             // 
@@ -264,5 +306,9 @@
         private System.Windows.Forms.ColumnHeader clo_ghiChu;
         private System.Windows.Forms.ColumnHeader clo_ngaySanXuat;
         private System.Windows.Forms.Button btn_reset;
+        private System.Windows.Forms.Label lbl_giaMax;
+        private System.Windows.Forms.ComboBox cbo_giaMax;
+        private System.Windows.Forms.ComboBox cbo_giaMin;
+        private System.Windows.Forms.Label lbl_giaMin;
     }
 }
